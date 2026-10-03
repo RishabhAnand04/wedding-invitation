@@ -31,8 +31,7 @@ function invitationHead() {
         `<meta name="twitter:title" content="${esc(meta.title)}" />`,
         `<meta name="twitter:description" content="${esc(meta.description)}" />`,
         `<meta name="twitter:image" content="${esc(image)}" />`,
-        `<link rel="preload" as="image" href="${artUrl('hero-portrait')}" media="(max-width: 767px)" />`,
-        `<link rel="preload" as="image" href="${artUrl('hero-backdrop')}" media="(min-width: 768px)" />`,
+        `<link rel="preload" as="image" href="${artUrl('hero-backdrop')}" fetchpriority="high" />`,
         events[0] ? `<link rel="preload" as="image" href="${artUrl(events[0].art)}" />` : '',
       ];
       return html.replace('<!--invitation-head-->', tags.filter(Boolean).join('\n    '));

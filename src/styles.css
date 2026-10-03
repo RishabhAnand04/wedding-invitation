@@ -86,14 +86,14 @@ ul {
 /* ---------- Shared pieces ---------- */
 
 .paper-tile {
-  background-image: url('./assets/paper.svg');
+  background-image: url('./assets/paper.webp');
   background-size: 560px 560px;
   opacity: 0.5;
   mix-blend-mode: multiply;
 }
 
 .damask-tile {
-  background-image: url('./assets/damask.svg');
+  background-image: url('./assets/damask.webp');
   background-size: 420px 420px;
   opacity: 0.4;
   mix-blend-mode: multiply;
@@ -281,9 +281,10 @@ h2 {
 }
 
 .floater--flip img { transform: scaleX(-1); }
-.floater--bob img { animation: bob 5s ease-in-out infinite alternate; }
+.floater--bob img { animation: bob 3.5s ease-in-out infinite alternate; }
 .floater--drift img { animation: drift 16s ease-in-out infinite alternate; }
-.floater--sway img { animation: sway 6s ease-in-out infinite alternate; }
+.floater--sway { animation: flyX 5.5s ease-in-out infinite alternate; }
+.floater--sway img { animation: flyY 3.5s ease-in-out infinite alternate, tilt 4.5s ease-in-out infinite alternate; }
 
 /* ---------- Ambient background ---------- */
 
@@ -312,13 +313,13 @@ h2 {
   width: clamp(64px, 9vw, 120px);
   height: auto;
   opacity: 0.5;
-  animation: spin 120s linear infinite;
+  animation: spin 240s linear infinite, breathe 6s ease-in-out infinite alternate;
 }
 
 .ambient__cloud {
   position: absolute;
   height: auto;
-  animation: drift 38s ease-in-out infinite alternate;
+  animation: cloudDrift 36s ease-in-out infinite alternate;
 }
 
 .ambient__cloud--a { top: 12%; left: -2%; width: clamp(120px, 18vw, 260px); opacity: 0.45; }
@@ -374,22 +375,21 @@ h2 {
   margin: auto;
   text-align: center;
   padding: clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 6vw, 2.5rem);
-  background: radial-gradient(closest-side, rgba(246, 239, 227, 0.75), rgba(246, 239, 227, 0.35));
 }
 
-.thali {
+.plate {
   position: relative;
   width: clamp(120px, 30vw, 168px);
   margin: 0 auto 1.25rem;
 }
 
-.thali__plate {
+.plate__img {
   width: 100%;
   height: auto;
   filter: drop-shadow(0 14px 28px rgba(60, 34, 8, 0.3));
 }
 
-.thali__medallion {
+.plate__medallion {
   position: absolute;
   inset: 24%;
   display: flex;
@@ -397,7 +397,7 @@ h2 {
   justify-content: center;
 }
 
-.thali__medallion img {
+.plate__medallion img {
   width: 100%;
   height: auto;
 }
@@ -446,7 +446,7 @@ h2 {
   top: 0;
   left: 0;
   width: 28px;
-  height: 28px;
+  height: auto;
   will-change: transform;
 }
 
@@ -828,9 +828,10 @@ h2 {
   position: relative;
   width: 100%;
   max-width: 460px;
-  padding: clamp(1.85rem, 5vw, 2.25rem) clamp(1.75rem, 5vw, 2.4rem);
+  padding: 1.7rem 1.9rem;
+  border-radius: 6px;
   background-color: var(--card);
-  background-image: url('./assets/paper.svg');
+  background-image: url('./assets/paper.webp');
   background-size: 380px 380px;
   background-blend-mode: multiply;
   -webkit-backdrop-filter: blur(6px);
@@ -838,7 +839,7 @@ h2 {
   border: 1px solid rgba(161, 124, 28, 0.55);
   outline: var(--frame-outline);
   outline-offset: 4px;
-  box-shadow: 0 24px 60px rgba(20, 10, 2, 0.35);
+  box-shadow: 0 18px 50px rgba(15, 8, 2, 0.35);
 }
 
 .event-card h3 {
@@ -1287,19 +1288,39 @@ h2 {
   to { rotate: 360deg; }
 }
 
+@keyframes breathe {
+  from { scale: 1; }
+  to { scale: 1.06; }
+}
+
+@keyframes cloudDrift {
+  from { translate: -45px 0; }
+  to { translate: 45px 0; }
+}
+
 @keyframes drift {
   from { translate: -14px 0; }
   to { translate: 18px 0; }
 }
 
 @keyframes bob {
-  from { translate: 0 -6px; }
-  to { translate: 0 6px; }
+  from { translate: 0 0; }
+  to { translate: 0 -3px; }
 }
 
-@keyframes sway {
-  from { rotate: -3deg; translate: -6px 0; }
-  to { rotate: 3deg; translate: 8px 0; }
+@keyframes flyX {
+  from { translate: 0 0; }
+  to { translate: 26px 0; }
+}
+
+@keyframes flyY {
+  from { translate: 0 0; }
+  to { translate: 0 10px; }
+}
+
+@keyframes tilt {
+  from { rotate: 0deg; }
+  to { rotate: 3deg; }
 }
 
 @media (prefers-reduced-motion: reduce) {

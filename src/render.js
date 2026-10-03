@@ -13,7 +13,7 @@ const divider = (width = 160) =>
 
 const corners = (size = '') =>
   ['tl', 'tr', 'bl', 'br']
-    .map((pos) => `<img class="corner corner--${pos} ${size}" src="${art('corner-ornament')}" alt="" aria-hidden="true" width="110" height="110" decoding="async">`)
+    .map((pos) => `<img class="corner corner--${pos} ${size}" src="${art('corner-ornament')}" alt="" aria-hidden="true" width="256" height="262" decoding="async">`)
     .join('');
 
 const floater = (name, cls, style) =>
@@ -28,8 +28,8 @@ const sectionHead = ({ eyebrow, title, subtitle }, id) => `
   </header>`;
 
 const strands = (variant) => `
-  <img class="strand strand--left strand--${variant}" src="${art('marigold-strand')}" alt="" aria-hidden="true" width="212" height="1794" decoding="async">
-  <img class="strand strand--right strand--${variant}" src="${art('marigold-strand')}" alt="" aria-hidden="true" width="212" height="1794" decoding="async">`;
+  <img class="strand strand--left strand--${variant}" src="${art('marigold-strand')}" alt="" aria-hidden="true" width="106" height="897" decoding="async">
+  <img class="strand strand--right strand--${variant}" src="${art('marigold-strand')}" alt="" aria-hidden="true" width="106" height="897" decoding="async">`;
 
 function ambient() {
   return `
@@ -38,9 +38,9 @@ function ambient() {
     <div class="ambient__layer paper-tile"></div>
     <div class="ambient__layer damask-tile"></div>
     <div class="ambient__layer ambient__glow"></div>
-    <img class="ambient__sun" src="${art('sun-medallion')}" alt="" width="240" height="240" decoding="async">
-    <img class="ambient__cloud ambient__cloud--a" src="${art('cloud-a')}" alt="" width="520" height="300" decoding="async">
-    <img class="ambient__cloud ambient__cloud--b" src="${art('cloud-b')}" alt="" width="420" height="260" decoding="async">
+    <img class="ambient__sun" src="${art('sun-medallion')}" alt="" width="300" height="301" decoding="async">
+    <img class="ambient__cloud ambient__cloud--a" src="${art('cloud-a')}" alt="" width="520" height="382" decoding="async">
+    <img class="ambient__cloud ambient__cloud--b" src="${art('cloud-b')}" alt="" width="420" height="308" decoding="async">
     <div class="ambient__layer ambient__dusk" data-dusk></div>
     <div class="ambient__layer ambient__vignette"></div>
     ${strands('ambient')}
@@ -59,9 +59,9 @@ function overlay(c) {
     <div class="petals" data-petals aria-hidden="true"></div>
     <div class="frame overlay__card">
       ${corners('corner--md')}
-      <div class="thali" aria-hidden="true">
-        <img class="thali__plate" src="${art('thali')}" alt="" width="340" height="348" decoding="async">
-        <div class="thali__medallion"><img src="${art('ganesh-medallion')}" alt="" width="120" height="120" decoding="async"></div>
+      <div class="plate" aria-hidden="true">
+        <img class="plate__img" src="${art('plate')}" alt="" width="750" height="767" decoding="async">
+        <div class="plate__medallion"><img src="${art('ganesh-medallion')}" alt="" width="256" height="259" decoding="async"></div>
       </div>
       <p class="deva overlay__deva" lang="hi">${esc(c.invocation)}</p>
       <p class="overlay__invite">${esc(c.overlay.invite)}</p>
@@ -75,16 +75,13 @@ function hero(c) {
   return `
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__backdrop" data-layer="backdrop">
-      <picture>
-        <source media="(max-width: 767px)" srcset="${art('hero-portrait')}">
-        <img src="${art('hero-backdrop')}" alt="" fetchpriority="high" decoding="async">
-      </picture>
+      <img src="${art('hero-backdrop')}" alt="" width="1080" height="717" fetchpriority="high" decoding="async">
     </div>
     <div class="hero__couple" data-layer="couple">
-      <img src="${art('hero-couple')}" alt="Illustration of ${esc(c.bride)} and ${esc(c.groom)}" width="840" height="1260" decoding="async">
+      <img src="${art('hero-couple')}" alt="Illustration of ${esc(c.bride)} and ${esc(c.groom)}" width="640" height="964" decoding="async">
     </div>
     <div class="hero__foreground" data-layer="foreground" aria-hidden="true">
-      <img src="${art('hero-foreground')}" alt="" width="2048" height="380" decoding="async">
+      <img src="${art('hero-foreground')}" alt="" width="1080" height="384" decoding="async">
     </div>
     <div class="petals" data-petals aria-hidden="true"></div>
     <div class="hero__text" data-layer="text">
@@ -139,7 +136,7 @@ function scene(e, i) {
   return `
     <article class="scene${i === 0 ? ' is-active' : ''}" data-scene aria-labelledby="event-${esc(e.key)}">
       <div class="scene__art" data-scene-art>
-        <img src="${art(e.art)}" alt="" ${i === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async">
+        <img src="${art(e.art)}" alt="" width="1080" height="717" ${i === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async">
       </div>
       <div class="scene__shade" aria-hidden="true"></div>
       <div class="scene__inner">
@@ -201,7 +198,7 @@ function gallery(c) {
     <div class="gallery__row" data-reveal-group>
       ${g.items.map((item) => `
         <figure class="arch" data-reveal-item>
-          <div class="arch__frame"><img src="${publicUrl(`photos/${item.img}`)}" alt="${esc(item.caption)}" loading="lazy" decoding="async"></div>
+          <div class="arch__frame"><img src="${item.art ? art(item.art) : publicUrl(`photos/${item.img}`)}" alt="${esc(item.caption)}" loading="lazy" decoding="async"></div>
           <figcaption>${esc(item.caption)}</figcaption>
         </figure>`).join('')}
     </div>

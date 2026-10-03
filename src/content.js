@@ -36,7 +36,7 @@ export default {
       key: 'mehendi', name: 'Mehendi', date: 'Wednesday, 9 December', time: '11:00 AM onwards', // TODO
       venue: 'Kapoor Residence', area: 'C-Scheme, Jaipur', address: '12 Example Marg, C-Scheme, Jaipur 302001', // TODO
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=C-Scheme%2C+Jaipur', // TODO
-      dress: 'Shades of green', note: 'Henna, folk songs and a long lazy lunch.', art: 'scene-mehendi', // TODO note
+      dress: 'Shades of green', note: 'Henna, folk songs and a long lazy lunch.', art: 'scene-mehndi', // TODO note
     },
     {
       key: 'haldi', name: 'Haldi', date: 'Thursday, 10 December', time: '10:00 AM onwards', // TODO
@@ -48,13 +48,13 @@ export default {
       key: 'engagement', name: 'Engagement', date: 'Friday, 11 December', time: '7:00 PM onwards', // TODO
       venue: 'The Courtyard Banquet', area: 'MI Road, Jaipur', address: '45 Example Road, MI Road, Jaipur 302001', // TODO
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=MI+Road%2C+Jaipur', // TODO
-      dress: 'Pastels / rose gold', note: 'Rings, toasts and dancing under the lamps.', art: 'scene-engagement', // TODO note
+      dress: 'Pastels / rose gold', note: 'Rings, toasts and dancing under the lamps.', art: 'scene-sangeet', // TODO note
     },
     {
       key: 'wedding', name: 'Wedding', date: 'Saturday, 12 December', time: 'Baraat 4 PM · Pheras 7:30 PM', // TODO
       venue: 'Palace Gardens', area: 'Amer Road, Jaipur', address: 'Example Palace Gardens, Amer Road, Jaipur 302002', // TODO
       mapUrl: 'https://www.google.com/maps/search/?api=1&query=Amer+Road%2C+Jaipur', // TODO
-      dress: 'Your regal best', note: 'The baraat arrives at dusk; vows around the sacred fire.', art: 'scene-wedding', // TODO note
+      dress: 'Your regal best', note: 'The baraat arrives at dusk; vows around the sacred fire.', art: 'scene-mandap', // TODO note
     },
   ],
 
@@ -67,11 +67,18 @@ export default {
   },
 
   gallery: {
-    enabled: false,
+    enabled: true,
     eyebrow: 'From our album',
     title: 'Captured Moments',
     subtitle: 'A few of our favourite frames',
-    items: [ /* { img: 'gallery-1.webp', caption: '…' }  (img lives in public/photos/) */ ],
+    // Each item uses either `art` (a painting in public/art/) or `img` (a photo in public/photos/).
+    items: [
+      { art: 'scene-mehndi', caption: 'The mehendi afternoon' },
+      { art: 'scene-haldi', caption: 'Turmeric and laughter' },
+      { art: 'scene-sangeet', caption: 'Dancing till the stars came out' },
+      { art: 'scene-mandap', caption: 'Around the sacred fire' },
+      { art: 'scene-reception', caption: 'An evening in the palace hall' },
+    ],
   },
 
   details: {

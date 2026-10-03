@@ -16,7 +16,7 @@ function petals(layer, count = 20) {
     img.src = art('petal');
     img.alt = '';
     img.width = 28;
-    img.height = 28;
+    img.height = 31;
     img.className = 'petal';
     layer.append(img);
     return img;
@@ -175,12 +175,19 @@ function duskTint() {
   gsap.to('[data-dusk]', { opacity: 0.25, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: true } });
 }
 
+function floaterParallax() {
+  gsap.utils.toArray('.floater--drift').forEach((el) => {
+    gsap.fromTo(el, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
+  });
+}
+
 export function initMotion() {
   if (reducedMotion) return;
   heroMotion();
   celebrationsMotion();
   reveals();
   duskTint();
+  floaterParallax();
 }
 
 export const refreshScroll = () => ScrollTrigger.refresh();
