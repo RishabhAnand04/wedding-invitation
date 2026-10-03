@@ -113,7 +113,7 @@ export default {
   meta: {
     title: 'Priya weds Arjun', // TODO
     description: 'You are cordially invited — 12 December 2026 · Jaipur.', // TODO
-    siteUrl: 'https://pranand2_amadeus.github.io/wedding-invitation/', // TODO set to the real Pages URL (must end with /)
+    siteUrl: 'https://rishabhanand04.github.io/wedding-invitation/', // must end with /
     ogImage: 'og.jpg',
   },
 };
