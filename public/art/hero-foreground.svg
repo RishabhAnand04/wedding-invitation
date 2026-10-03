@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="380" viewBox="0 0 2048 380">
+  <defs>
+    <linearGradient id="drape" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5e1420"/>
+      <stop offset="1" stop-color="#8e2433"/>
+    </linearGradient>
+    <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e1420"/>
+      <stop offset="0.6" stop-color="#8e2433"/>
+      <stop offset="1" stop-color="#6a1824"/>
+    </linearGradient>
+    <g id="swag">
+      <path d="M0 40Q128 230 256 40Q128 150 0 40Z" fill="url(#drape)"/>
+      <path d="M0 40Q128 230 256 40" fill="none" stroke="#c9a227" stroke-width="6"/>
+      <path d="M30 56Q128 190 226 56M60 60Q128 160 196 60" fill="none" stroke="#4a0f19" stroke-width="2" opacity="0.6"/>
+    </g>
+    <g id="tassel">
+      <path d="M0 40V150" stroke="#c9a227" stroke-width="3"/>
+      <circle cy="150" r="9" fill="#e3c25a"/>
+      <path d="M-11 158H11L17 214H-17Z" fill="#c9a227"/>
+      <path d="M-12 214H12" stroke="#8a6d1c" stroke-width="3"/>
+    </g>
+  </defs>
+  <use href="#swag"/><use href="#swag" x="256"/><use href="#swag" x="512"/><use href="#swag" x="768"/>
+  <use href="#swag" x="1024"/><use href="#swag" x="1280"/><use href="#swag" x="1536"/><use href="#swag" x="1792"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-128 52Q0 210 128 52Q256 210 384 52Q512 210 640 52Q768 210 896 52Q1024 210 1152 52Q1280 210 1408 52Q1536 210 1664 52Q1792 210 1920 52Q2048 210 2176 52" stroke="#ef7d1a" stroke-width="22" stroke-dasharray="0 22"/>
+    <path d="M-128 52Q0 210 128 52Q256 210 384 52Q512 210 640 52Q768 210 896 52Q1024 210 1152 52Q1280 210 1408 52Q1536 210 1664 52Q1792 210 1920 52Q2048 210 2176 52" stroke="#f5b82e" stroke-width="16" stroke-dasharray="0 22" stroke-dashoffset="-11"/>
+  </g>
+  <use href="#tassel" x="256"/><use href="#tassel" x="512"/><use href="#tassel" x="768"/><use href="#tassel" x="1024"/>
+  <use href="#tassel" x="1280"/><use href="#tassel" x="1536"/><use href="#tassel" x="1792"/>
+  <rect width="2048" height="46" fill="#7b1e2b"/>
+  <path d="M0 46H2048" stroke="#c9a227" stroke-width="6"/>
+  <path d="M0 56H2048" stroke="#e3c25a" stroke-width="9" stroke-dasharray="0 18" stroke-linecap="round"/>
+  <path d="M0 20H2048" stroke="#c9a227" stroke-width="2" stroke-dasharray="12 8" opacity="0.7"/>
+  <path d="M0 0H180C160 110 124 200 76 270C100 305 80 340 0 360Z" fill="url(#side)"/>
+  <path d="M180 0C160 110 124 200 76 270C100 305 80 340 0 360" fill="none" stroke="#c9a227" stroke-width="6"/>
+  <path d="M2048 0H1868C1888 110 1924 200 1972 270C1948 305 1968 340 2048 360Z" fill="url(#side)"/>
+  <path d="M1868 0C1888 110 1924 200 1972 270C1948 305 1968 340 2048 360" fill="none" stroke="#c9a227" stroke-width="6"/>
+  <g fill="#e3c25a">
+    <ellipse cx="66" cy="262" rx="44" ry="10"/><circle cx="100" cy="266" r="10"/>
+    <ellipse cx="1982" cy="262" rx="44" ry="10"/><circle cx="1948" cy="266" r="10"/>
+  </g>
+</svg>

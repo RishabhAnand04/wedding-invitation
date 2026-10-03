@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e2a52"/>
+      <stop offset="0.4" stop-color="#4a3a78"/>
+      <stop offset="0.62" stop-color="#b8625e"/>
+      <stop offset="0.72" stop-color="#f0a35a"/>
+    </linearGradient>
+    <radialGradient id="fireGlow" cx="800" cy="620" r="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb347" stop-opacity="0.75"/>
+      <stop offset="0.5" stop-color="#ff8a2a" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#ff8a2a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="canopy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5e1420"/>
+      <stop offset="1" stop-color="#9c2433"/>
+    </linearGradient>
+    <linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b8902a"/>
+      <stop offset="0.5" stop-color="#f6dc84"/>
+      <stop offset="1" stop-color="#a8801f"/>
+    </linearGradient>
+    <pattern id="buti" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="2.5" fill="#e3c25a"/>
+    </pattern>
+    <mask id="moon">
+      <rect width="1600" height="900" fill="#fff"/>
+      <circle cx="1338" cy="128" r="30" fill="#000"/>
+    </mask>
+    <path id="dome" d="M-50 0C-52-30-30-46-10-60C-4-66 0-74 0-84C0-74 4-66 10-60C30-46 52-30 50 0Z"/>
+    <g id="diya">
+      <circle cy="-16" r="18" fill="#ffb347" opacity="0.35"/>
+      <path d="M-14 0Q0 14 14 0Z" fill="#d8a93a"/>
+      <path d="M0-4C-5-10-3-18 0-24C3-18 5-10 0-4Z" fill="#ffd35a"/>
+    </g>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <g fill="#fff8e1">
+    <circle cx="120" cy="60" r="2"/><circle cx="260" cy="120" r="1.6"/><circle cx="380" cy="40" r="2.2"/><circle cx="470" cy="170" r="1.4"/>
+    <circle cx="560" cy="80" r="1.8"/><circle cx="690" cy="30" r="1.5"/><circle cx="910" cy="60" r="2"/><circle cx="1010" cy="140" r="1.5"/>
+    <circle cx="1110" cy="40" r="2.2"/><circle cx="1210" cy="190" r="1.4"/><circle cx="1450" cy="70" r="2"/><circle cx="1540" cy="160" r="1.6"/>
+    <circle cx="60" cy="200" r="1.4"/><circle cx="200" cy="250" r="1.2"/><circle cx="1420" cy="240" r="1.3"/><circle cx="1560" cy="30" r="1.8"/>
+  </g>
+  <circle cx="1320" cy="140" r="34" fill="#fff3c4" mask="url(#moon)"/>
+  <g fill="#2b2440">
+    <path d="M0 600C200 580 400 590 600 575C800 560 1000 585 1200 570C1400 556 1500 575 1600 568V900H0Z"/>
+    <rect x="120" y="520" width="220" height="80"/><use href="#dome" transform="translate(230 520)"/>
+    <rect x="1260" y="510" width="240" height="90"/><use href="#dome" transform="translate(1380 510) scale(1.1)"/>
+  </g>
+  <rect y="640" width="1600" height="260" fill="#1d2238"/>
+  <rect width="1600" height="900" fill="url(#fireGlow)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M0 120Q260 330 540 370" stroke="#ffe39a" stroke-width="6" stroke-dasharray="0 24"/>
+    <path d="M1600 120Q1340 330 1060 370" stroke="#ffe39a" stroke-width="6" stroke-dasharray="0 24"/>
+    <path d="M0 220Q300 380 540 400" stroke="#ffd06a" stroke-width="5" stroke-dasharray="0 22"/>
+    <path d="M1600 220Q1300 380 1060 400" stroke="#ffd06a" stroke-width="5" stroke-dasharray="0 22"/>
+  </g>
+  <g fill="#8a6d1c">
+    <rect x="626" y="380" width="28" height="350"/>
+    <rect x="946" y="380" width="28" height="350"/>
+  </g>
+  <rect x="500" y="720" width="600" height="50" fill="#e9d3a4"/>
+  <path d="M500 720H1100" stroke="#c9a227" stroke-width="5"/>
+  <rect x="460" y="770" width="680" height="40" fill="#d9bd85"/>
+  <g fill="url(#pillar)">
+    <rect x="520" y="360" width="40" height="370"/>
+    <rect x="1040" y="360" width="40" height="370"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M540 380V720M1060 380V720" stroke="#ef7d1a" stroke-width="16" stroke-dasharray="0 30"/>
+    <path d="M540 395V720M1060 395V720" stroke="#f5b82e" stroke-width="16" stroke-dasharray="0 30"/>
+  </g>
+  <path d="M496 364C536 252 690 178 800 158C910 178 1064 252 1104 364Z" fill="url(#canopy)"/>
+  <path d="M496 364C536 252 690 178 800 158C910 178 1064 252 1104 364Z" fill="url(#buti)"/>
+  <path d="M496 364C536 252 690 178 800 158C910 178 1064 252 1104 364" fill="none" stroke="#e3c25a" stroke-width="6"/>
+  <path d="M496 364H1104" stroke="#c9a227" stroke-width="8"/>
+  <path d="M500 374H1100" stroke="#e3c25a" stroke-width="12" stroke-dasharray="0 20" stroke-linecap="round"/>
+  <path d="M782 160Q800 130 818 160Z M786 146C786 132 814 132 814 146" fill="#d8a93a"/>
+  <circle cx="800" cy="126" r="9" fill="#8b5a2b"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M590 380V450M670 380V470M750 380V440M850 380V440M930 380V470M1010 380V450" stroke="#ef7d1a" stroke-width="14" stroke-dasharray="0 16"/>
+    <path d="M630 380V460M710 380V440M790 380V460M890 380V450M970 380V460" stroke="#f5b82e" stroke-width="14" stroke-dasharray="0 16"/>
+  </g>
+  <path d="M560 386Q800 476 1040 386Q800 430 560 386Z" fill="#b3222f"/>
+  <path d="M560 386Q800 476 1040 386" fill="none" stroke="#e3c25a" stroke-width="5"/>
+  <g>
+    <rect x="610" y="670" width="90" height="40" rx="10" fill="#7b1e2b" stroke="#e3c25a" stroke-width="3"/>
+    <rect x="900" y="670" width="90" height="40" rx="10" fill="#7b1e2b" stroke="#e3c25a" stroke-width="3"/>
+  </g>
+  <path d="M740 660H860L846 716H754Z" fill="#b06a2a" stroke="#7a4218" stroke-width="3"/>
+  <path d="M732 660H868" stroke="#d08a3a" stroke-width="8"/>
+  <path d="M800 560C760 600 748 630 760 660H840C852 630 840 600 800 560Z" fill="#f08a1c"/>
+  <path d="M800 586C774 616 772 640 780 660H820C828 640 826 616 800 586Z" fill="#ffc23a"/>
+  <path d="M800 614C788 632 790 648 794 660H806C810 648 812 632 800 614Z" fill="#fff1a8"/>
+  <use href="#diya" transform="translate(530 768)"/><use href="#diya" transform="translate(600 768)"/>
+  <use href="#diya" transform="translate(670 768)"/><use href="#diya" transform="translate(740 768)"/>
+  <use href="#diya" transform="translate(860 768)"/><use href="#diya" transform="translate(930 768)"/>
+  <use href="#diya" transform="translate(1000 768)"/><use href="#diya" transform="translate(1070 768)"/>
+  <g fill="#c8323f" opacity="0.85">
+    <ellipse cx="780" cy="830" rx="6" ry="3"/><ellipse cx="820" cy="846" rx="6" ry="3"/><ellipse cx="770" cy="864" rx="6" ry="3"/>
+    <ellipse cx="830" cy="878" rx="6" ry="3"/><ellipse cx="800" cy="892" rx="6" ry="3"/>
+  </g>
+  <g fill="#ef7d1a" opacity="0.85">
+    <ellipse cx="800" cy="822" rx="5" ry="3"/><ellipse cx="790" cy="852" rx="5" ry="3"/><ellipse cx="814" cy="868" rx="5" ry="3"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Placeholder: a kalash medallion. Replace with real Ganesh artwork. -->
+  <circle cx="60" cy="60" r="58" fill="#7b1e2b"/>
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#e3c25a" stroke-width="3" stroke-dasharray="0 8.17" stroke-linecap="round"/>
+  <circle cx="60" cy="60" r="46" fill="#fbf3dc"/>
+  <path d="M60 52C52 44 44 42 36 44C44 50 52 52 60 52Z" fill="#4f7a2f"/>
+  <path d="M60 52C68 44 76 42 84 44C76 50 68 52 60 52Z" fill="#4f7a2f"/>
+  <path d="M60 52C56 44 50 38 44 36C48 44 54 50 60 52Z" fill="#5e8c37"/>
+  <path d="M60 52C64 44 70 38 76 36C72 44 66 50 60 52Z" fill="#5e8c37"/>
+  <ellipse cx="60" cy="38" rx="9" ry="11" fill="#8b5a2b"/>
+  <path d="M60 27C58 22 62 20 60 16" fill="none" stroke="#6b4420" stroke-width="2" stroke-linecap="round"/>
+  <path d="M51 41Q60 45 69 41" fill="none" stroke="#c8323f" stroke-width="2"/>
+  <rect x="50" y="52" width="20" height="7" rx="2" fill="#c08a1e"/>
+  <path d="M60 92C42 92 36 80 38 72C40 64 48 60 50 58H70C72 60 80 64 82 72C84 80 78 92 60 92Z" fill="#d8a93a" stroke="#9c7419" stroke-width="1.5"/>
+  <path d="M39 74H81" stroke="#7b1e2b" stroke-width="2.5"/>
+  <circle cx="60" cy="82" r="3" fill="#c8323f"/>
+</svg>
