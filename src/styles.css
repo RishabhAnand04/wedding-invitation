@@ -313,7 +313,7 @@ h2 {
   width: clamp(64px, 9vw, 120px);
   height: auto;
   opacity: 0.5;
-  animation: spin 240s linear infinite, breathe 6s ease-in-out infinite alternate;
+  animation: breathe 6s ease-in-out infinite alternate;
 }
 
 .ambient__cloud {
@@ -1282,10 +1282,6 @@ h2 {
 @keyframes strandSway {
   from { rotate: -2.4deg; }
   to { rotate: 2.4deg; }
-}
-
-@keyframes spin {
-  to { rotate: 360deg; }
 }
 
 @keyframes breathe {
