@@ -181,10 +181,12 @@ function floaterParallax() {
   });
 }
 
+const pinCelebrations = window.matchMedia('(min-width: 768px)').matches;
+
 export function initMotion() {
   if (reducedMotion) return;
   heroMotion();
-  celebrationsMotion();
+  if (pinCelebrations) celebrationsMotion();
   reveals();
   duskTint();
   floaterParallax();
