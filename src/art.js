@@ -1,5 +1,5 @@
 // Painted art is WebP in public/art/; motifs without a painted version are still SVG placeholders.
-const svgOnly = new Set(['elephant', 'peacock', 'vine-sprig', 'lotus-cluster']);
+const svgOnly = new Set(['peacock', 'vine-sprig']);
 
 export const artFile = (name) => `${name}.${svgOnly.has(name) ? 'svg' : 'webp'}`;
 export const art = (name) => `${import.meta.env.BASE_URL}art/${artFile(name)}`;
