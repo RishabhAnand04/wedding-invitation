@@ -13,10 +13,10 @@
   --gold-text: #4a3410;
   --frame-border: 1px solid rgba(201, 162, 39, 0.45);
   --frame-outline: 1px solid rgba(123, 30, 43, 0.14);
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-display: 'Playfair Display', 'Tiro Devanagari Hindi', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lora', 'Tiro Devanagari Hindi', Georgia, 'Times New Roman', serif;
   --font-deva: 'Tiro Devanagari Sanskrit', 'Kohinoor Devanagari', 'Noto Sans Devanagari', serif;
-  --font-ui: 'Manrope', system-ui, sans-serif;
+  --font-ui: 'Manrope', 'Tiro Devanagari Hindi', system-ui, sans-serif;
   --section-pad: clamp(4rem, 9vw, 6.5rem) 1.25rem;
 }
 
@@ -66,6 +66,67 @@ ul {
 
 [hidden] {
   display: none !important;
+}
+
+/* ---------- Language ---------- */
+
+html[data-lang="en"] [data-lang-hi],
+html[data-lang="hi"] [data-lang-en] {
+  display: none !important;
+}
+
+/* Letter-spacing and capitals break Devanagari conjuncts. */
+[data-lang-hi] {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* Devanagari reads small at the sizes tuned for Latin capitals. */
+.hero__weds [data-lang-hi] { font-size: 1.7em; }
+.pill [data-lang-hi] { font-size: 1.12em; }
+
+.lang-switch {
+  position: fixed;
+  top: calc(0.75rem + env(safe-area-inset-top));
+  right: 0.75rem;
+  z-index: 120;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1.5px solid var(--maroon);
+  border-radius: 9999px;
+  background: rgba(250, 245, 234, 0.96);
+  box-shadow: 0 8px 24px rgba(60, 34, 8, 0.25);
+}
+
+.lang-switch button {
+  min-width: 72px;
+  min-height: 44px;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--maroon);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-switch button[lang="hi"] {
+  font-family: 'Tiro Devanagari Hindi', var(--font-body);
+  font-size: 1.2rem;
+}
+
+.lang-switch button[aria-pressed="true"] {
+  background: var(--maroon);
+  color: var(--ivory);
+}
+
+.lang-switch button:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 2px;
 }
 
 :focus-visible {
@@ -359,6 +420,8 @@ h2 {
   z-index: 100;
   display: flex;
   padding: 1.5rem;
+  /* Keeps the card clear of the language switch. */
+  padding-top: calc(4.25rem + env(safe-area-inset-top));
   background: var(--ivory);
   overflow: hidden auto;
   overscroll-behavior: contain;
@@ -639,7 +702,7 @@ h2 {
   margin-top: 0.25rem;
 }
 
-.hero__city span {
+.hero__city > [aria-hidden] {
   color: var(--gold);
   margin: 0 0.5em;
 }

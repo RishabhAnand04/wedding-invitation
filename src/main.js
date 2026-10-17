@@ -1,16 +1,51 @@
 import './styles.css';
-import content from './content.js';
+import { content as copy, LANGS } from './i18n.js';
 import { renderSite } from './render.js';
 import { initOverlay, initMotion, refreshScroll } from './motion.js';
 import { publicUrl } from './art.js';
 
+const content = copy.en;
+const LANG_KEY = 'invite-lang';
 const root = document.documentElement;
-document.querySelector('#app').innerHTML = renderSite(content);
+let lang = savedLang();
+root.dataset.lang = lang;
+
+document.querySelector('#app').innerHTML = renderSite();
 root.classList.add('is-locked');
 
 const main = document.querySelector('#main');
 const overlay = document.querySelector('[data-overlay]');
 const music = setupMusic(content.music);
+
+applyLang(lang);
+document.querySelectorAll('[data-set-lang]').forEach((button) => {
+  button.addEventListener('click', () => {
+    if (button.dataset.setLang === lang) return;
+    applyLang(button.dataset.setLang);
+    try { localStorage.setItem(LANG_KEY, lang); } catch { /* private mode: choice just isn't remembered */ }
+    refreshScroll();
+  });
+});
+
+function savedLang() {
+  try {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (LANGS.includes(saved)) return saved;
+  } catch { /* storage blocked */ }
+  return (navigator.language || '').toLowerCase().startsWith('hi') ? 'hi' : 'en';
+}
+
+function applyLang(next) {
+  lang = next;
+  root.dataset.lang = next;
+  root.lang = next;
+  document.querySelectorAll('[data-set-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.setLang === next)));
+  for (const attr of ['alt', 'aria-label']) {
+    document.querySelectorAll(`[data-${attr}-${next}]`).forEach((el) => el.setAttribute(attr, el.getAttribute(`data-${attr}-${next}`)));
+  }
+  document.title = copy[next].meta.title;
+  music?.refresh();
+}
 
 const sealed = initOverlay(overlay);
 initMotion();
@@ -64,8 +99,9 @@ function setupMusic(config) {
   audio.preload = 'none';
 
   const render = (playing) => {
+    const ui = copy[lang].ui;
     button.setAttribute('aria-pressed', String(playing));
-    button.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
+    button.setAttribute('aria-label', playing ? ui.musicPause : ui.musicPlay);
     button.querySelector('[data-music-on]').hidden = !playing;
     button.querySelector('[data-music-off]').hidden = playing;
   };
@@ -75,5 +111,5 @@ function setupMusic(config) {
   button.addEventListener('click', () => (audio.paused ? play() : pause()));
   document.addEventListener('visibilitychange', () => { if (document.hidden && !audio.paused) pause(); });
 
-  return { button, play };
+  return { button, play, refresh: () => render(!audio.paused) };
 }

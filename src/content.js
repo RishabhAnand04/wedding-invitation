@@ -1,4 +1,5 @@
 // All invitation content lives here. Edit this file only; markup and motion read from it.
+// Hindi translations of the text live in content.hi.js.
 // Every value marked TODO is a sample placeholder — replace it with the real detail.
 export default {
   bride: 'Pragya', // TODO
@@ -116,5 +117,22 @@ export default {
     description: 'You are cordially invited — 10 December 2026 · Ghaziabad.', // TODO
     siteUrl: 'https://kvnitin31.github.io/demoV/', // must end with /
     ogImage: 'og.jpg',
+  },
+
+  // Small labels used around the page. {name}-style placeholders are filled in automatically.
+  ui: {
+    weds: 'weds',
+    dress: 'Dress',
+    openMaps: 'Open in Google Maps',
+    mapsSr: 'for {name} at {venue} (opens in a new tab)',
+    venueMapsSr: 'for {venue} (opens in a new tab)',
+    days: 'Days',
+    hours: 'Hours',
+    minutes: 'Minutes',
+    seconds: 'Seconds',
+    invitationLabel: 'Invitation',
+    coupleAlt: 'Illustration of {bride} and {groom}',
+    musicPlay: 'Play background music',
+    musicPause: 'Pause background music',
   },
 };
