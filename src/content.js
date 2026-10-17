@@ -41,19 +41,19 @@ export default {
     {
       key: 'haldi', name: 'Haldi', date: 'Wednesday, 9 December', time: '10:00 AM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, Uttar Pradesh', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
-      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Abharam%20Retreats%2C%20Fly%20Over%20Bridge%2070%2C%20Ghaziabad%20201002', // TODO
+      mapUrl: 'https://www.google.com/maps/place/Abharam+Retreats/@28.6392486,77.4628645,17z/data=!3m1!4b1!4m9!3m8!1s0x390cefbf7f2fc6c1:0xc15c06d529f721e9!5m2!4m1!1i2!8m2!3d28.6392486!4d77.4628645!16s%2Fg%2F11y01b4wc4?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D', // TODO
       dress: 'Yellow', note: 'Expect turmeric everywhere — white is a brave choice.', art: 'scene-haldi', // TODO note
     },
     {
       key: 'engagement', name: 'Engagement', date: 'Wednesday, 9 December', time: '7:00 PM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, Uttar Pradesh', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
-      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Abharam%20Retreats%2C%20Fly%20Over%20Bridge%2070%2C%20Ghaziabad%20201002', // TODO
+      mapUrl: 'https://www.google.com/maps/place/Abharam+Retreats/@28.6392486,77.4628645,17z/data=!3m1!4b1!4m9!3m8!1s0x390cefbf7f2fc6c1:0xc15c06d529f721e9!5m2!4m1!1i2!8m2!3d28.6392486!4d77.4628645!16s%2Fg%2F11y01b4wc4?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D', // TODO
       dress: 'Pastels / rose gold', note: 'Rings, toasts and dancing under the lamps.', art: 'scene-sangeet', // TODO note
     },
     {
       key: 'wedding', name: 'Wedding', date: 'Thursday, 10 December', time: 'Baraat 7 PM · Pheras 11:30 PM', // TODO
       venue: 'Queens Lawn, Vedanta Farm', area: 'Delhi-Meerut Expy, near AKG College', address: 'Vedanta Farm, Ghaziabad 201015', // TODO
-      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Queens%20Lawn%2C%20Vedanta%20Farm%2C%20Delhi-Meerut%20Expy%2C%20Ghaziabad%20201015', // TODO
+      mapUrl: 'https://www.google.com/maps/place/Vedanta+Farm/@28.6766587,77.4993392,17z/data=!3m1!4b1!4m6!3m5!1s0x390cf2423ce756dd:0xba4460ec3bcb99b9!8m2!3d28.6766587!4d77.4993392!16s%2Fg%2F124sxwn8v?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D', // TODO
       dress: 'Your regal best', note: 'The baraat arrives at dusk; vows around the sacred fire.', art: 'scene-mandap', // TODO note
     },
   ],
@@ -111,10 +111,6 @@ export default {
   footer: {
     families: 'The Prasad & Singh Families', // TODO
     line: 'With love, laughter and the blessings of our elders',
-    contacts: [ // TODO
-      { name: 'Rishabh Anand', phone: '+91 7588212764' },
-      { name: 'Arun Kumar', phone: '+91 9718673847' },
-    ],
   },
 
   meta: {
