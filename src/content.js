@@ -51,7 +51,7 @@ export default {
       dress: 'Pastels / rose gold', note: 'Rings, toasts and dancing under the lamps.', art: 'scene-sangeet', // TODO note
     },
     {
-      key: 'wedding', name: 'Wedding', date: 'Thursday, 10 December', time: 'Baraat 7 PM · Pheras 11:30 PM', // TODO
+      key: 'wedding', name: 'Wedding', date: 'Thursday, 10 December', time: 'Baraat 8 PM · Pheras Midnight', // TODO
       venue: 'Queens Lawn, Vedanta Farm', area: 'Delhi-Meerut Expy, near AKG College', address: 'Vedanta Farm, Ghaziabad 201015', // TODO
       mapUrl: 'https://www.google.com/maps/place/Vedanta+Farm/@28.6766587,77.4993392,17z/data=!3m1!4b1!4m6!3m5!1s0x390cf2423ce756dd:0xba4460ec3bcb99b9!8m2!3d28.6766587!4d77.4993392!16s%2Fg%2F124sxwn8v?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D', // TODO
       dress: 'Your regal best', note: 'The baraat arrives at dusk; vows around the sacred fire.', art: 'scene-mandap', // TODO note
