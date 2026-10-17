@@ -77,7 +77,7 @@ export default {
       { art: 'scene-haldi', caption: 'Turmeric and laughter' },
       { art: 'scene-sangeet', caption: 'Dancing till the stars came out' },
       { art: 'scene-mandap', caption: 'Around the sacred fire' },
-      { art: 'scene-reception', caption: 'An evening in the palace hall' },
+      { art: 'scene-reception', caption: 'An evening in the wedding hall' },
     ],
   },
 
