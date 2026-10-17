@@ -35,25 +35,25 @@ export default {
     {
       key: 'mehendi', name: 'Mehendi', date: 'Tuesday, 8 December', time: '7:00 PM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, Uttar Pradesh', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
-      mapUrl: 'https://maps.app.goo.gl/U6L3eCMyP6LLxP9J6', // TODO
+      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Abharam%20Retreats%2C%20Fly%20Over%20Bridge%2070%2C%20Ghaziabad%20201002', // TODO
       dress: 'Shades of green', note: 'Henna, folk songs and a long lazy lunch.', art: 'scene-mehndi', // TODO note
     },
     {
       key: 'haldi', name: 'Haldi', date: 'Wednesday, 9 December', time: '10:00 AM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, Uttar Pradesh', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
-      mapUrl: 'https://maps.app.goo.gl/U6L3eCMyP6LLxP9J6', // TODO
+      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Abharam%20Retreats%2C%20Fly%20Over%20Bridge%2070%2C%20Ghaziabad%20201002', // TODO
       dress: 'Yellow', note: 'Expect turmeric everywhere — white is a brave choice.', art: 'scene-haldi', // TODO note
     },
     {
       key: 'engagement', name: 'Engagement', date: 'Wednesday, 9 December', time: '7:00 PM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, Uttar Pradesh', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
-      mapUrl: 'https://maps.app.goo.gl/U6L3eCMyP6LLxP9J6', // TODO
+      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Abharam%20Retreats%2C%20Fly%20Over%20Bridge%2070%2C%20Ghaziabad%20201002', // TODO
       dress: 'Pastels / rose gold', note: 'Rings, toasts and dancing under the lamps.', art: 'scene-sangeet', // TODO note
     },
     {
       key: 'wedding', name: 'Wedding', date: 'Thursday, 10 December', time: 'Baraat 7 PM · Pheras 11:30 PM', // TODO
       venue: 'Queens Lawn, Vedanta Farm', area: 'Delhi-Meerut Expy, near AKG College', address: 'Vedanta Farm, Ghaziabad 201015', // TODO
-      mapUrl: 'https://maps.app.goo.gl/4mXwMYbLWai4nRST6', // TODO
+      mapUrl: 'https://www.google.com/maps/dir/?api=1&destination=Queens%20Lawn%2C%20Vedanta%20Farm%2C%20Delhi-Meerut%20Expy%2C%20Ghaziabad%20201015', // TODO
       dress: 'Your regal best', note: 'The baraat arrives at dusk; vows around the sacred fire.', art: 'scene-mandap', // TODO note
     },
   ],
