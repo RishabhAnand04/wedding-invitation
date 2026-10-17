@@ -126,7 +126,7 @@ function celebrationsMotion() {
       trigger: stage,
       pin: true,
       start: 'top top',
-      end: () => `+=${n * window.innerHeight}`,
+      end: () => `+=${n * stage.offsetHeight}`,
       scrub: 0.6,
       anticipatePin: 1,
       invalidateOnRefresh: true,
