@@ -738,7 +738,7 @@ h2 {
 .scene__art {
   position: absolute;
   inset: 0;
-  will-change: transform;
+  /*will-change: transform;*/
 }
 
 .scene__art img {
@@ -834,8 +834,8 @@ h2 {
   background-image: url('./assets/paper.webp');
   background-size: 380px 380px;
   background-blend-mode: multiply;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  /*-webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);*/
   border: 1px solid rgba(161, 124, 28, 0.55);
   outline: var(--frame-outline);
   outline-offset: 4px;
