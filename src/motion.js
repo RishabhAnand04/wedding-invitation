@@ -194,7 +194,7 @@ function celebrationEntrance() {
       entry.target.classList.add('is-seen');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.22, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.45, rootMargin: '0px 0px -6% 0px' });
 
   scenes.forEach((scene) => observer.observe(scene));
 }
