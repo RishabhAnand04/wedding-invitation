@@ -148,7 +148,7 @@ function scene(e, i) {
           <p class="event-card__row">${icon('map-pin')}<span><strong>${esc(e.venue)}</strong>${e.area ? `<span class="muted"> · ${esc(e.area)}</span>` : ''}</span></p>
           ${e.dress ? `<p class="event-card__row">${icon('shirt')}<span>Dress: ${esc(e.dress)}</span></p>` : ''}
           ${e.note ? `<p class="event-card__note">${esc(e.note)}</p>` : ''}
-          ${map ? `<a class="map-link" href="${map}" target="_blank" rel="noopener">${icon('navigation', { size: 14 })}Open in Google Maps<span class="sr-only"> for ${esc(e.name)} at ${esc(e.venue)} (opens in a new tab)</span></a>` : ''}
+          ${map ? `<a class="map-link" href="${map}" rel="noopener">${icon('navigation', { size: 14 })}Open in Google Maps<span class="sr-only"> for ${esc(e.name)} at ${esc(e.venue)} (opens in a new tab)</span></a>` : ''}
         </div>
       </div>
     </article>`;
@@ -250,7 +250,7 @@ function venues(c) {
           <p class="label">${esc(v.names.join(' · '))}</p>
           <h3>${esc(v.venue)}</h3>
           <p class="venue__address">${icon('map-pin')}<span>${esc(v.address || v.area)}</span></p>
-          ${map ? `<a class="pill pill--sm" href="${map}" target="_blank" rel="noopener">${icon('navigation', { size: 14 })}Open in Google Maps<span class="sr-only"> for ${esc(v.venue)} (opens in a new tab)</span></a>` : ''}
+          ${map ? `<a class="pill pill--sm" href="${map}" rel="noopener">${icon('navigation', { size: 14 })}Open in Google Maps<span class="sr-only"> for ${esc(v.venue)} (opens in a new tab)</span></a>` : ''}
         </li>`;
       }).join('')}
     </ul>
