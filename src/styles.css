@@ -742,8 +742,13 @@ h2 {
 }
 
 @media (max-width: 767px) {
+  .scene.is-seen .event-card {
+    animation: card-rise 0.85s ease-out both;
+  }
   .scene.is-seen .scene__art img {
-    animation: scene-drift 18s ease-in-out infinite alternate;
+    animation:
+      scene-in 1.1s ease-out both,
+      scene-drift 14s ease-in-out 1.1s infinite alternate;
   }
 }
 
@@ -1325,9 +1330,19 @@ h2 {
   to { rotate: 3deg; }
 }
 
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(36px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scene-in {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+
 @keyframes scene-drift {
   from { transform: scale(1); }
-  to { transform: scale(1.045); }
+  to { transform: scale(1.06); }
 }
 
 @media (prefers-reduced-motion: reduce) {
