@@ -10,7 +10,7 @@ export const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 const rand = gsap.utils.random;
 
-function petals(layer, count = 20) {
+function petals(layer, count = 16) {
   const imgs = Array.from({ length: count }, () => {
     const img = document.createElement('img');
     img.src = art('petal');
@@ -27,7 +27,7 @@ function petals(layer, count = 20) {
     const h = layer.clientHeight;
     const x = rand(0, w);
     const y = scatter ? rand(-40, h) : -40;
-    gsap.set(img, { x, y, rotation: rand(0, 360), scale: rand(0.4, 1), opacity: rand(0.5, 0.9) });
+    gsap.set(img, { x, y, rotation: rand(0, 360), scale: rand(0.4, 1), opacity: rand(0.4, 0.72) });
     gsap.to(img, {
       x: x + rand(-120, 120),
       y: h + 40,
@@ -38,16 +38,9 @@ function petals(layer, count = 20) {
     });
   };
 
-  let running = false;
   return {
     play() {
-      if (running) return;
-      running = true;
       imgs.forEach((img) => drop(img, true));
-    },
-    stop() {
-      running = false;
-      gsap.killTweensOf(imgs);
     },
   };
 }
@@ -56,8 +49,8 @@ function petals(layer, count = 20) {
 export function initOverlay(overlay) {
   if (reducedMotion) return { open: (done) => { overlay.remove(); done(); } };
 
-  const overlayPetals = petals(overlay.querySelector('[data-petals]'));
-  overlayPetals.play();
+  // One viewport-fixed layer: petals fall over the overlay and keep falling on every section.
+  petals(document.querySelector('[data-petals]')).play();
   gsap.set('[data-hero-reveal]', { autoAlpha: 0, y: 24 });
 
   return {
@@ -68,7 +61,6 @@ export function initOverlay(overlay) {
         duration: 0.6,
         ease: 'power2.inOut',
         onComplete: () => {
-          overlayPetals.stop();
           overlay.remove();
           done();
           gsap.to('[data-hero-reveal]', { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out' });
@@ -79,80 +71,19 @@ export function initOverlay(overlay) {
 }
 
 function heroMotion() {
-  const hero = document.querySelector('.hero');
-  const heroPetals = petals(hero.querySelector('[data-petals]'));
-  heroPetals.play();
-
   gsap.timeline({
     defaults: { ease: 'none' },
     scrollTrigger: {
-      trigger: hero,
+      trigger: '.hero',
       start: 'top top',
       end: 'bottom top',
       scrub: true,
-      onToggle: (self) => (self.isActive ? heroPetals.play() : heroPetals.stop()),
     },
   })
     .to('[data-layer="backdrop"]', { yPercent: 10 }, 0)
     .to('[data-layer="couple"]', { yPercent: 8 }, 0)
     .to('[data-layer="foreground"]', { yPercent: -45 }, 0)
     .to('[data-layer="text"]', { y: -90, opacity: 0 }, 0);
-}
-
-function celebrationsMotion() {
-  const stage = document.querySelector('[data-stage]');
-  const scenes = gsap.utils.toArray('[data-scene]', stage);
-  const arts = gsap.utils.toArray('[data-scene-art]', stage);
-  const cards = gsap.utils.toArray('[data-scene-card]', stage);
-  const dots = gsap.utils.toArray('.dot', stage);
-  const n = scenes.length;
-  if (!n) return;
-
-  stage.classList.add('stage--pinned');
-  gsap.set(scenes.slice(1), { opacity: 0 });
-  gsap.set(cards.slice(1), { opacity: 0, y: 44 });
-
-  let active = 0;
-  const setActive = (i) => {
-    if (i === active) return;
-    active = i;
-    scenes.forEach((s, j) => s.classList.toggle('is-active', j === i));
-    dots.forEach((d, j) => d.classList.toggle('is-active', j === i));
-  };
-
-  const tl = gsap.timeline({
-    defaults: { ease: 'none' },
-    scrollTrigger: {
-      trigger: stage,
-      pin: true,
-      start: 'top top',
-      end: () => `+=${n * window.innerHeight}`,
-      scrub: 0.6,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => setActive(Math.min(n - 1, Math.floor(self.progress * n + 0.25))),
-    },
-  });
-
-  // One timeline unit per event; each next scene fades over the last at (i - 0.45).
-  arts.forEach((el, i) => {
-    tl.fromTo(el, { scale: 1.08, yPercent: 2 }, { scale: 1, yPercent: 0, duration: 1, ease: 'power1.out' }, i === 0 ? 0 : i - 0.45);
-  });
-  for (let i = 1; i < n; i++) {
-    const at = i - 0.45;
-    tl.to(cards[i - 1], { y: -34, opacity: 0, duration: 0.2, ease: 'power2.in' }, at)
-      .to(scenes[i], { opacity: 1, duration: 0.35, ease: 'power1.inOut' }, at)
-      .to(cards[i], { y: 0, opacity: 1, duration: 0.25, ease: 'power2.out' }, at + 0.2);
-  }
-  tl.set({}, {}, n);
-
-  // Keyboard users tabbing into a faded-out card get scrolled to its scene.
-  stage.addEventListener('focusin', (e) => {
-    const i = scenes.findIndex((s) => s.contains(e.target));
-    if (i < 0 || i === active) return;
-    const st = tl.scrollTrigger;
-    window.scrollTo({ top: st.start + ((i + 0.05) / n) * (st.end - st.start), behavior: 'instant' });
-  });
 }
 
 function reveals() {
@@ -181,10 +112,28 @@ function floaterParallax() {
   });
 }
 
+function celebrationEntrance() {
+  const scenes = document.querySelectorAll('[data-scene]');
+  if (!scenes.length || !('IntersectionObserver' in window)) {
+    scenes.forEach((scene) => scene.classList.add('is-seen'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-seen');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.45, rootMargin: '0px 0px -6% 0px' });
+
+  scenes.forEach((scene) => observer.observe(scene));
+}
+
 export function initMotion() {
   if (reducedMotion) return;
   heroMotion();
-  celebrationsMotion();
+  celebrationEntrance();
   reveals();
   duskTint();
   floaterParallax();

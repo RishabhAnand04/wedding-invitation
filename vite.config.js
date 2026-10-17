@@ -3,7 +3,7 @@ import content from './src/content.js';
 import { artFile } from './src/art.js';
 
 // GitHub Pages project site: '/<repo-name>/'. Use '/' for a user site or a custom domain.
-const base = '/wedding-invitation/';
+const base = '/';
 
 const esc = (value = '') =>
   String(value).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);

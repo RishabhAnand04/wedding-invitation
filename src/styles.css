@@ -1,4 +1,6 @@
 :root {
+  /* Opts out of Chrome/Samsung auto-dark, which repainted the ivory background on some phones. */
+  color-scheme: only light;
   --ivory: #f6efe3;
   --card: rgba(250, 245, 234, 0.94);
   --ink: #3a2a1b;
@@ -165,7 +167,7 @@ ul {
 }
 
 .corner--lg { --c: clamp(64px, 12vw, 110px); --ci: 10px; }
-.corner--md { --c: clamp(54px, 10vw, 88px); --ci: 8px; }
+.corner--md { --c: clamp(59px, 11vw, 97px); --ci: 9px; }
 .corner--sm { --c: 36px; --ci: 5px; opacity: 0.9; }
 
 .corner--tl { top: var(--ci); left: var(--ci); }
@@ -294,6 +296,8 @@ h2 {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  background: var(--ivory);
+  isolation: isolate;
 }
 
 .ambient__layer {
@@ -365,22 +369,24 @@ h2 {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  background: var(--ivory);
+  isolation: isolate;
 }
 
 .overlay__glow { background: radial-gradient(90% 70% at 50% 30%, rgba(233, 196, 90, 0.3) 0%, transparent 65%); }
 
 .overlay__card {
-  max-width: 440px;
+  max-width: 484px;
   width: 100%;
   margin: auto;
   text-align: center;
-  padding: clamp(2.5rem, 8vw, 3.5rem) clamp(1.5rem, 6vw, 2.5rem);
+  padding: clamp(2.75rem, 8.8vw, 3.85rem) clamp(1.65rem, 6.6vw, 2.75rem);
 }
 
 .plate {
   position: relative;
-  width: clamp(120px, 30vw, 168px);
-  margin: 0 auto 1.25rem;
+  width: clamp(132px, 33vw, 185px);
+  margin: 0 auto 1.4rem;
 }
 
 .plate__img {
@@ -391,7 +397,7 @@ h2 {
 
 .plate__medallion {
   position: absolute;
-  inset: 24%;
+  inset: 19%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,25 +409,43 @@ h2 {
 }
 
 .overlay__deva {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.21rem;
+  margin-bottom: 1.1rem;
 }
 
 .overlay__invite {
   font-family: var(--font-display);
   font-style: italic;
   color: var(--ink);
-  font-size: clamp(1.1rem, 3vw, 1.3rem);
-  margin-bottom: 0.7rem;
+  font-size: clamp(1.21rem, 3.3vw, 1.43rem);
+  margin-bottom: 0.75rem;
 }
 
 .overlay__names {
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--maroon);
-  font-size: clamp(2rem, 7vw, 2.7rem);
+  font-size: clamp(2.2rem, 7.7vw, 2.97rem);
   line-height: 1.2;
-  margin-bottom: 1.85rem;
+  margin-bottom: 2rem;
+}
+
+.overlay__names:has(+ .overlay__after) {
+  margin-bottom: 0.35rem;
+}
+
+.overlay__after {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--gold-deep);
+  font-size: clamp(1.32rem, 3.8vw, 1.6rem);
+  letter-spacing: 0.06em;
+  margin-bottom: 2rem;
+}
+
+.overlay .pill {
+  padding: 1.15rem 3.1rem;
+  font-size: 1.1rem;
 }
 
 .amp {
@@ -430,15 +454,11 @@ h2 {
 }
 
 .petals {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  z-index: 35;
+  z-index: 110;
   overflow: hidden;
   pointer-events: none;
-}
-
-.overlay .petals {
-  position: fixed;
 }
 
 .petal {
@@ -488,14 +508,16 @@ h2 {
   left: 0;
   right: 0;
   z-index: 20;
-  width: clamp(220px, 38vw, 420px);
+  /* Fills the space under the names (~430px of text above) without ever reaching them. */
+  height: clamp(200px, min(44svh, 100svh - 430px), 600px);
+  width: fit-content;
   margin-inline: auto;
   pointer-events: none;
 }
 
 .hero__couple img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   filter: drop-shadow(0 18px 30px rgba(30, 16, 5, 0.35));
 }
 
@@ -525,25 +547,31 @@ h2 {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  padding: clamp(6.5rem, 17svh, 11rem) 1.5rem 0;
+  padding: clamp(5.5rem, 14svh, 9rem) 1.5rem 0;
 }
 
 .hero__panel {
   max-width: 660px;
-  padding: 2.2rem clamp(1rem, 5vw, 2.6rem) 2.4rem;
+  padding: 1.4rem clamp(1rem, 5vw, 2.6rem) 1.6rem;
   border-radius: 28px;
-  background: radial-gradient(closest-side, rgba(250, 245, 233, 0.93) 52%, rgba(250, 245, 233, 0.62) 78%, transparent 100%);
-  text-shadow: 0 1px 14px rgba(250, 245, 233, 0.95);
+  background: radial-gradient(closest-side, rgba(250, 245, 233, 0.86) 50%, rgba(250, 245, 233, 0.54) 76%, transparent 100%);
+  text-shadow: 0 1px 12px rgba(250, 245, 233, 0.9);
+}
+
+/* Tiro Devanagari ships only weight 400, so a hairline stroke thickens it without faux-bold. */
+.hero__deva,
+.overlay__deva {
+  -webkit-text-stroke: 0.4px currentColor;
 }
 
 .hero__deva {
   font-size: clamp(1.05rem, 2.8vw, 1.25rem);
   letter-spacing: 0.14em;
-  margin-bottom: 1.1rem;
+  margin: 1rem 0 0.5rem;
 }
 
 .hero__divider {
-  margin-bottom: 1.3rem;
+  margin-bottom: 0.7rem;
 }
 
 .hero__divider .divider span {
@@ -554,7 +582,7 @@ h2 {
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--maroon);
-  font-size: clamp(3.1rem, 11vw, 6rem);
+  font-size: clamp(2.8rem, min(11vw, 8svh), 6rem);
   line-height: 1.05;
   letter-spacing: 0.01em;
 }
@@ -588,8 +616,8 @@ h2 {
 
 .hero__pill {
   display: inline-block;
-  margin-top: 1.6rem;
-  padding: 0.9rem 2rem;
+  margin-top: 1rem;
+  padding: 0.7rem 2rem;
   border: 1px solid rgba(161, 124, 28, 0.55);
   border-radius: 9999px;
   background: rgba(250, 245, 233, 0.75);
@@ -644,7 +672,7 @@ h2 {
 .families__cols {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 0.6rem 2rem;
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 2rem;
@@ -684,6 +712,7 @@ h2 {
   font-family: var(--font-display);
   color: var(--gold);
   font-size: 1.6rem;
+  line-height: 1;
 }
 
 .families__request {
@@ -718,27 +747,63 @@ h2 {
   padding: 2.25rem 0 2.75rem;
 }
 
-/* Default (and reduced-motion) layout: scenes stacked as static cards. */
+/* Events are always a vertical timeline, on every screen size. */
 .stage {
+  position: relative;
   display: grid;
-  gap: 1.5rem;
-  max-width: 1100px;
+  gap: 4.5rem;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 0 0.75rem;
+  padding: 0.75rem 0.85rem 0.75rem 2.6rem;
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1.2rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
 }
 
 .scene {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: min(88svh, 720px);
-  overflow: hidden;
+  display: block;
+  overflow: visible;
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 1.35rem;
+  left: -1.72rem;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--gold);
+  background: var(--ivory);
+  box-shadow: 0 0 0 5px var(--ivory);
+  transform: rotate(45deg);
 }
 
 .scene__art {
-  position: absolute;
-  inset: 0;
-  will-change: transform;
+  position: relative;
+  height: 52svh;
+  min-height: 260px;
+  overflow: hidden;
+  border-radius: 22px 22px 8px 8px;
+  box-shadow: 0 18px 44px rgba(15, 8, 2, 0.2);
+}
+
+.scene.is-seen .event-card {
+  animation: card-rise 2.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.scene.is-seen .scene__art img {
+  animation:
+    scene-in 3.2s cubic-bezier(0.16, 1, 0.3, 1) both,
+    scene-drift 30s ease-in-out 3.2s infinite alternate;
 }
 
 .scene__art img {
@@ -749,93 +814,32 @@ h2 {
 
 .scene__shade {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52svh;
+  min-height: 260px;
+  border-radius: 22px 22px 8px 8px;
   background: linear-gradient(to top, rgba(34, 22, 8, 0.42) 0%, transparent 55%);
 }
 
 .scene__inner {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  width: 100%;
-  padding: clamp(0.75rem, 4vw, 3.5rem);
-  padding-bottom: clamp(2.5rem, 8svh, 5rem);
-}
-
-.stage__dots {
-  display: none;
-}
-
-.stage--pinned {
-  display: block;
-  position: relative;
-  height: 100vh;
-  height: 100svh;
-  max-width: none;
-  padding: 0;
-  overflow: hidden;
-}
-
-.stage--pinned .scene {
-  position: absolute;
-  inset: 0;
-  min-height: 0;
-  pointer-events: none;
-}
-
-.stage--pinned .scene.is-active {
-  pointer-events: auto;
-}
-
-.stage--pinned .stage__dots {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transform: translateY(-50%);
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-  opacity: 0.35;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.dot.is-active {
-  opacity: 1;
-  transform: scale(1.5);
-}
-
-@media (max-width: 600px) {
-  .stage--pinned .stage__dots {
-    top: 1.25rem;
-    right: auto;
-    left: 50%;
-    flex-direction: row;
-    transform: translateX(-50%);
-  }
+  margin-top: -3.4rem;
+  padding: 0 0.2rem 0 0.8rem;
 }
 
 .event-card {
   position: relative;
   width: 100%;
-  max-width: 460px;
   padding: 1.7rem 1.9rem;
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: var(--card);
   background-image: url('./assets/paper.webp');
   background-size: 380px 380px;
   background-blend-mode: multiply;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  /*-webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);*/
   border: 1px solid rgba(161, 124, 28, 0.55);
   outline: var(--frame-outline);
   outline-offset: 4px;
@@ -909,11 +913,6 @@ h2 {
   box-shadow: 0 6px 18px rgba(123, 30, 43, 0.3);
 }
 
-@media (max-height: 560px) {
-  .stage--pinned .event-card__note { display: none; }
-  .stage--pinned .scene__inner { padding-block: 1rem; }
-}
-
 /* ---------- Our Story ---------- */
 
 .story__grid {
@@ -942,8 +941,7 @@ h2 {
   box-shadow: 0 14px 36px rgba(20, 10, 2, 0.25);
 }
 
-.story__photo img,
-.arch__frame img {
+.story__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -971,49 +969,6 @@ h2 {
   line-height: 1.7;
   max-width: 330px;
   margin: 0 auto;
-}
-
-/* ---------- Captured Moments ---------- */
-
-.gallery__row {
-  position: relative;
-  z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: clamp(1.5rem, 4vw, 2.75rem);
-}
-
-.arch {
-  width: clamp(200px, 38vw, 280px);
-}
-
-.arch:nth-child(even) {
-  margin-top: clamp(1.5rem, 4vw, 3rem);
-}
-
-.arch__frame {
-  position: relative;
-  aspect-ratio: 3 / 4.1;
-  border-radius: 999px 999px 10px 10px;
-  border: 1.5px solid rgba(161, 124, 28, 0.65);
-  outline: var(--frame-outline);
-  outline-offset: 5px;
-  overflow: hidden;
-  background: rgba(255, 252, 244, 0.7);
-  box-shadow: 0 18px 44px rgba(60, 34, 8, 0.18);
-}
-
-.arch figcaption {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--ink-muted);
-  font-size: 1.1rem;
-  text-align: center;
-  margin-top: 0.85rem;
 }
 
 /* ---------- Things to Know ---------- */
@@ -1099,6 +1054,21 @@ h2 {
 
 .venue h3 {
   margin-top: 0.5rem;
+}
+
+.venue__photo {
+  aspect-ratio: 4 / 3;
+  margin: -0.5rem -0.25rem 1.4rem;
+  overflow: hidden;
+  border: 1.5px solid rgba(161, 124, 28, 0.65);
+  border-radius: 18px 18px 6px 6px;
+  box-shadow: 0 14px 34px rgba(60, 34, 8, 0.18);
+}
+
+.venue__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .venue__address {
@@ -1317,6 +1287,21 @@ h2 {
 @keyframes tilt {
   from { rotate: 0deg; }
   to { rotate: 3deg; }
+}
+
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(56px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scene-in {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+@keyframes scene-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.045); }
 }
 
 @media (prefers-reduced-motion: reduce) {
