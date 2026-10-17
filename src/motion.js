@@ -181,12 +181,31 @@ function floaterParallax() {
   });
 }
 
-const pinCelebrations = window.matchMedia('(min-width: 768px)').matches;
-
+function celebrationEntrance() {
+  gsap.utils.toArray('[data-scene]').forEach((scene) => {
+    const card = scene.querySelector('[data-scene-card]');
+    if (card) {
+      gsap.fromTo(card, { y: 28, opacity: 0 }, {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: scene, start: 'top 82%', once: true },
+      });
+    }
+    ScrollTrigger.create({
+      trigger: scene,
+      start: 'top 90%',
+      end: 'bottom 10%',
+      onToggle: (self) => scene.classList.toggle('is-seen', self.isActive),
+    });
+  });
+}
 export function initMotion() {
   if (reducedMotion) return;
   heroMotion();
-  if (pinCelebrations) celebrationsMotion();
+  if (window.matchMedia('(min-width: 768px)').matches) celebrationsMotion();
+  else celebrationEntrance();
   reveals();
   duskTint();
   floaterParallax();
