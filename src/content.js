@@ -19,8 +19,8 @@ export default {
   families: {
     invocation: '॥ श्री गणेशाय नमः ॥',
     blessingLine: 'With the blessings of our elders and the grace of the almighty,',
-    bride: { label: 'Daughter of', parents: 'Mrs. Archana & Mr. Rajeev Nandan Prasad', grandparents: 'granddaughter of late Smt. Chintamani' }, // TODO
-    groom: { label: 'Son of', parents: 'Mrs. Babita & Mr. Karamveer Singh', grandparents: 'grandson of late Smt. Pitam Kaur' }, // TODO
+    bride: { label: 'Daughter of', parents: 'Mrs. Archana & Mr. Rajeev Nandan Prasad', grandparents: 'granddaughter of late Smt. Chintamani & late Shri Vasudev Bhagat' }, // TODO
+    groom: { label: 'Son of', parents: 'Mrs. Babita & Mr. Karamveer Singh', grandparents: 'grandson of late Smt. Pitam Kaur & late Shri Baburam' }, // TODO
     request: 'Request the honour of your gracious presence as their children wed',
     closing: 'Your blessings are the most treasured gift.',
   },
