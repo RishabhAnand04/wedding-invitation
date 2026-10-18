@@ -938,6 +938,21 @@ h2 {
   font-weight: 600;
 }
 
+/* Everything except the italic note stays on one line; a long area trails off (full address is in Venues). */
+.event-card .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.event-card__time,
+.event-card__row > span {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .event-card__row .icon,
 .venue__address .icon {
   flex-shrink: 0;
