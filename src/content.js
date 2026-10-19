@@ -111,8 +111,8 @@ export default {
     eyebrow: 'We would love to hear from you',
     title: 'Contact Us',
     sides: [
-      { label: "Bride's Family", name: 'Rajeev Nandan Prasad', phone: '', address: ['Flat No. 4, Prasad Park B, Viman Nagar,', 'Air Force Rd, Ojhar, Nashik'] },
-      { label: "Groom's Family", name: 'Karamveer Singh', phone: '', address: ['House No. A 25, Lane 8, Indira Enclave Society,', 'NDRF-Sadarpur Rd, Govindpuram, Ghaziabad'] },
+      { label: "Bride's Family", name: 'Rajeev Nandan Prasad', phone: '', address: ['Flat No. 4, Prasad Park B, Viman Nagar,', 'Ojhar, Nashik'] },
+      { label: "Groom's Family", name: 'Karamveer Singh', phone: '', address: ['House No. A 25, Lane 8, Indira Enclave Society,', 'Govindpuram, Ghaziabad'] },
     ],
   },
 
