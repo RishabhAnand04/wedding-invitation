@@ -19,7 +19,7 @@ export default {
   families: {
     invocation: '॥ श्री गणेशाय नमः ॥',
     blessingLine: 'With the blessings of our elders and the grace of the almighty,',
-    bride: { label: 'Daughter of', parents: 'Mrs. Archana & Mr. Rajeev Nandan Prasad', grandparents: 'granddaughter of late Smt. Chintamani & late Shri Vasudev Bhagat' }, // TODO
+    bride: { label: 'Daughter of', parents: 'Mrs. Archana & Mr. Rajeev Nandan Prasad', grandparents: 'granddaughter of late Smt. Chintamani Devi & late Shri Vasudev Bhagat' }, // TODO
     groom: { label: 'Son of', parents: 'Mrs. Babita & Mr. Karamveer Singh', grandparents: 'grandson of late Smt. Pitam Kaur & late Shri Babu Ram' }, // TODO
     request: 'Request the honour of your gracious presence as their children wed',
     closing: 'Your blessings are the most treasured gift.',
@@ -38,7 +38,7 @@ export default {
       key: 'mehendi', name: 'Mehendi', date: 'Tuesday, 8 December', time: '7:00 PM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, U.P.', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
       mapUrl: 'https://www.google.com/maps/place/Abharam+Retreats/@28.6392486,77.4628645,17z/data=!3m1!4b1!4m9!3m8!1s0x390cefbf7f2fc6c1:0xc15c06d529f721e9!5m2!4m1!1i2!8m2!3d28.6392486!4d77.4628645!16s%2Fg%2F11y01b4wc4?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D', // TODO
-      dress: 'Shades of green', note: 'Henna, folk songs and a long lazy lunch.', art: 'scene-mehndi', // TODO note
+      dress: 'Shades of green', note: 'Henna, folk songs and a long lazy dinner.', art: 'scene-mehndi', // TODO note
     },
     {
       key: 'haldi', name: 'Haldi', date: 'Wednesday, 9 December', time: '10:00 AM onwards', // TODO
