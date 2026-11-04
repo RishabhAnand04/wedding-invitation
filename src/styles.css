@@ -770,14 +770,6 @@ h2 {
   margin-top: 0.5rem;
 }
 
-.families__sep {
-  align-self: center;
-  font-family: var(--font-display);
-  color: var(--gold);
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
 .families__request {
   font-family: var(--font-display);
   color: var(--maroon);

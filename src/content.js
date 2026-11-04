@@ -83,7 +83,6 @@ export default {
     hashtagNote: 'Tag your photos and stories so we never miss a moment.',
     items: [ // TODO
       { icon: 'cloud-sun', title: 'Weather', text: 'December in Ghaziabad is sunny by day and chilly after dark. Carry a shawl for the evenings.' },
-      { icon: 'bed-double', title: 'Where to Stay', text: 'Rooms are held near the venues for outstation guests. Contact the family members for details.' },
       { icon: 'car', title: 'Getting There', text: 'Every event card has a Google Maps link. Valet parking is available at all venues.' },
       { icon: 'shirt', title: 'Dress Code', text: 'Indian festive. Greens for Mehendi, yellows for Haldi and your regal best for the Wedding.' },
     ],

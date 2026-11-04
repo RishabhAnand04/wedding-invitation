@@ -142,7 +142,6 @@ function families(c) {
       <p class="families__blessing">${t((k) => k.families.blessingLine)}</p>
       <div class="families__cols">
         ${side('bride')}
-        <div class="families__sep" aria-hidden="true">✦</div>
         ${side('groom')}
       </div>
       ${divider(110)}
