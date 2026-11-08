@@ -19,7 +19,7 @@ export default {
   families: {
     invocation: '॥ श्री गणेशाय नमः ॥',
     blessingLine: 'With the blessings of our elders and the grace of the almighty,',
-    bride: { label: 'Daughter of', parents: 'Mrs. Archana & Mr. Rajeev Nandan Prasad', grandparents: 'granddaughter of late Smt. Chintamani Devi & late Shri Vasudev Bhagat' }, // TODO
+    bride: { label: 'Daughter of', parents: 'Mrs. Archana & Mr. Rajeev Nandan Prasad', grandparents: 'granddaughter of late Smt. Chintamani Devi & late Shri Vasudev Prasad Bhagat' }, // TODO
     groom: { label: 'Son of', parents: 'Mrs. Babita & Mr. Karamveer Singh', grandparents: 'grandson of late Smt. Pitam Kaur & late Shri Babu Ram' }, // TODO
     request: 'Request the honour of your gracious presence as their children wed',
     closing: 'Your blessings are the most treasured gift.',
@@ -111,7 +111,7 @@ export default {
     title: 'Contact Us',
     sides: [
       { label: "Bride's Family", name: 'Rajeev Nandan Prasad', phone: '+91 75882 12764', address: ['Flat No. 4, Prasad Park B, Viman Nagar,', 'Ojhar, Nashik'] },
-      { label: "Groom's Family", name: 'Karamveer Singh', phone: '+91 88004 53134', address: ['House No. A 25, Lane 8, Indira Enclave Society,', 'Govindpuram, Ghaziabad'] },
+      { label: "Groom's Family", name: 'Karamveer Singh', phone: '+91 88004 53134', address: ['House No. A 25, Indira Enclave Society,', 'Govindpuram, Ghaziabad'] },
     ],
   },
 

@@ -163,7 +163,7 @@ function scene(e, i) {
       <div class="scene__inner">
         <div class="event-card">
           ${corners('corner--sm')}
-          <p class="label">${String(i + 1).padStart(2, '0')} <span class="star" aria-hidden="true">✦</span> ${t((k) => ev(k).date)}</p>
+          <p class="label">${t((k) => ev(k).date)}</p>
           <h3 id="event-${esc(e.key)}">${t((k) => ev(k).name)}</h3>
           <p class="event-card__time">${t((k) => ev(k).time)}</p>
           <p class="event-card__row">${icon('map-pin')}<span><strong>${t((k) => ev(k).venue)}</strong>${e.area ? `<span class="muted"> · ${t((k) => ev(k).area)}</span>` : ''}</span></p>
