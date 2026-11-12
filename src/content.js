@@ -47,7 +47,7 @@ export default {
       dress: 'Yellow', note: 'Expect turmeric everywhere — white is a brave choice.', art: 'scene-haldi', // TODO note
     },
     {
-      key: 'engagement', name: 'Engagement', date: 'Wednesday, 9 December', time: '7:00 PM onwards', // TODO
+      key: 'engagement', name: 'Engagement & Tilak', date: 'Wednesday, 9 December', time: '7:00 PM onwards', // TODO
       venue: 'Abharam Retreats', area: 'Ghaziabad, U.P.', address: 'Fly Over Bridge 70, Ghaziabad 201002', // TODO
       mapUrl: 'https://www.google.com/maps/place/Abharam+Retreats/@28.6392486,77.4628645,17z/data=!3m1!4b1!4m9!3m8!1s0x390cefbf7f2fc6c1:0xc15c06d529f721e9!5m2!4m1!1i2!8m2!3d28.6392486!4d77.4628645!16s%2Fg%2F11y01b4wc4?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D', // TODO
       dress: 'Festive evening wear', note: 'Rings and dancing under the lamps.', art: 'scene-sangeet', // TODO note
